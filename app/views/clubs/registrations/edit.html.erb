@@ -1,0 +1,161 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :サークル名 %>
+    <%= f.text_field :club_name,  class: 'form-control' %>
+    <br>
+    <%= f.label :サークル説明 %>
+    <br>
+    <%= f.text_area :club_description, class: 'form-control', rows:10 %>
+    <br>
+    <%= f.label :参加大学 %>
+    <%= f.text_field :club_college, class: 'form-control' %>
+    <br>
+    <%= f.label :人数 %>
+    <%= f.number_field :club_number,class: 'form-control' %>
+    <br>
+    <%= f.label :活動場所 %>
+    <%= f.text_field :club_place,class: 'form-control' %>
+    <br>
+    <%= f.label :活動頻度 %>
+    <%= f.text_field :club_frequency,class: 'form-control' %>
+    <br>
+    <%= f.label :twitter %>
+    <%= f.text_field :club_twitter, class: 'form-control' %>
+    <br>
+    <%= f.label :instagram %>
+    <%= f.text_field :club_instagram, class: 'form-control' %>
+    <br>
+    <%= f.label :何サークル？ %>
+    <%= f.text_field :tag_list, class: 'form-control' %>
+    <br>
+    <%= f.label :ジャンル、コンマで区切ってください  %>
+    <%= f.text_field:tag_list, value:@club.tag_list.join(',') , class: 'form-control' %>
+    <br>
+    <h4>主な年間スケジュール</h4>
+    <br>
+    <div class="plans_area row">
+      <div class="col">
+
+       <%= f.label :４月 %>
+       <%= f.text_area :april_plans, class: 'form-control' %>
+      </div>
+      <div class="col">
+
+       <%= f.label :５月 %>
+       <%= f.text_area :may_plans, class: 'form-control' %>
+
+      </div>
+      <div class="col">
+
+       <%= f.label :６月 %>
+       <%= f.text_area :june_plans, class: 'form-control' %>
+
+      </div>
+    </div>
+    <div class="plans_area row">
+      <div class="col">
+
+       <%= f.label :７月 %>
+       <%= f.text_area :july_plans, class: 'form-control' %>
+      </div>
+      <div class="col">
+
+       <%= f.label :８月 %>
+       <%= f.text_area :august_plans, class: 'form-control' %>
+
+      </div>
+      <div class="col">
+
+       <%= f.label :９月 %>
+       <%= f.text_area :september_plans, class: 'form-control' %>
+
+      </div>
+    </div>
+    <div class="plans_area row">
+      <div class="col">
+
+       <%= f.label :１０月 %>
+       <%= f.text_area :october_plans, class: 'form-control' %>
+      </div>
+      <div class="col">
+
+       <%= f.label :１１月 %>
+       <%= f.text_area :november_plans, class: 'form-control' %>
+
+      </div>
+      <div class="col">
+
+       <%= f.label :１２月 %>
+       <%= f.text_area :december_plans, class: 'form-control' %>
+
+      </div>
+    </div>
+    <div class="plans_area row">
+      <div class="col">
+
+       <%= f.label :１月 %>
+       <%= f.text_area :january_plans, class: 'form-control' %>
+      </div>
+      <div class="col">
+
+       <%= f.label :２月 %>
+       <%= f.text_area :february_plans, class: 'form-control' %>
+
+      </div>
+      <div class="col">
+
+       <%= f.label :３月 %>
+       <%= f.text_area :march_plans, class: 'form-control' %>
+
+      </div>
+    </div>
+    <br>
+    <h3>新歓・活動スケジュール</h3>
+    <br>
+    <%= f.label :新歓・活動スケジュール %>
+    <%= f.text_area :active_plans, class: 'form-control' , rows:10 %>
+    <br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IkutaClub</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'header' %>
+    <%= yield %>
+    <div class="footer">
+
+    <footer class="d-flex justify-content-between flex-wrap bg-dark p-4">
+
+        <ul class="list-inline">
+          <li class="list-inline-item pl-2 border-left border-light">
+            <a href="/clubs" class="text-white">サークル</a>
+          </li>
+          <li class="list-inline-item pl-2 border-left border-light">
+            <a href="/events" class="text-white">イベント</a>
+          </li>
+        </ul>
+
+        <div class="text-white">
+          <small>&copy;IkutaClub</small>
+        </div>
+       </footer>
+
+      </div>
+  </body>
+</html>

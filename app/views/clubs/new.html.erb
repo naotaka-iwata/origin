@@ -1,0 +1,31 @@
+<h1>新規サークル作成</h1>
+<%= form_for @club do |f| %>
+  <div class="field">
+    <%= f.label :サークル名 %>
+    <%= f.text_field :club_name, class: 'form-control' %>
+    <br>
+    <%= f.label :サークル説明 %>
+    <br>
+    <%= f.text_area :club_description, class: 'form-control', rows:10 %>
+    <br>
+    <%= f.label :参加大学 %>
+    <%= f.text_field :club_college, class: 'form-control' %>
+    <br>
+    <%= f.label :人数 %>
+    <%= f.number_field :club_number, class:'form-control' %>
+    <br>
+    <%= f.label :活動場所 %>
+    <%= f.text_field :club_place, class:'form-control' %>
+    <br>
+    <%= f.label :活動頻度 %>
+    <%= f.text_field :club_frequency, class:'form-control' %>
+    <br>
+    <%= f.label :twitter %>
+    <%= f.text_field :club_twitter, class:'form-control' %>
+    <br>
+    <%= f.label :instagram %>
+    <%= f.text_field :club_instagram, class: 'form-control' %>
+    <br>
+  </div>
+   <%= f.submit '新規作成する', class: 'btn btn-primary btn-block' %>
+<% end %>

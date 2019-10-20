@@ -1,0 +1,11 @@
+<h1>イベント</h1>
+<%= form_for @event do |f| %>
+  <div class="field">
+    <%= f.label :イベント日にち %>
+    <%= f.text_field :event_day, class:'form-control' %>
+    <br>
+    <%= f.label :イベント内容　%>
+    <%= f.text_area :event_content ,class:'form-control' ,rows:10%>
+  </div>
+  <%= f.submit "投稿する", class: 'btn btn-primary btn-block' %>
+<% end %>

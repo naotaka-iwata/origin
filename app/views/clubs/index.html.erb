@@ -1,0 +1,65 @@
+<div class="body-table">
+
+<h1>サークル一覧</h1>
+
+
+  <% @clubs.each do |t| %>
+   <div class="clubs">
+
+
+
+      <h3>  <%= t.club_name %>  </h3>
+
+
+
+        <div class="clubs-container row ">
+
+     <div class="image col-4 align-items-center">
+
+      <% if t.img? %>
+          <%= image_tag t.img.url %>
+      <% end %>
+
+      </div>
+
+    <div class="club-container col-8 align-items-center">
+
+      <% t.tag_list.each do |tag| %>
+         <%= link_to tag,  clubs_path(tag_name: tag) ,class:"btn-square-pop"%>
+      <% end %>
+        <table>
+        <tr>
+        <th>参加大学</th>
+        <td><%= t.club_college %></td>
+        </tr>
+
+        <tr>
+        <th>人数</th>
+        <td><%= t.club_number %></td>
+        </tr>
+
+        <tr>
+        <th>活動場所</th>
+        <td><%= t.club_place %></td>
+        </tr>
+
+
+          <tr>
+          <th>活動頻度</th>
+          <td><%= t.club_frequency %></td>
+          </tr>
+
+      </table>
+
+        <div class="btn-detail">
+
+        <%= link_to "詳細へ", club_path(t.id) ,class: "btn-push "%>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+    <% end %>
+
+</div>

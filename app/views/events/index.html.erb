@@ -1,0 +1,31 @@
+<div class="body-table">
+
+<h1>イベント一覧</h1>
+<div class="btn-detail">
+
+<% if club_signed_in? %>
+
+ <%= link_to 'イベント投稿', new_event_path, class: "btn-push" %>
+
+ <% end %>
+
+
+</div>
+
+
+  <% @events.each do |t| %>
+<div class="events-container">
+     <h3>  <%= t.event_day.strftime("%Y年%-m月%-d日 ") %>  </h3>
+      <br>
+      <p><%= t.event_content %></p>
+      <br>
+        <div class="btn-detail">
+
+             <%= link_to "詳細へ", event_path(t.id) ,class:"btn-push"%>
+        </div>
+  </div>
+
+    <% end %>
+
+
+    </div>

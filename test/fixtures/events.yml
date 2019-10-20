@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  club_id: 1
+  event_content: MyText
+  event_day: 2019-08-28 18:30:58
+
+two:
+  club_id: 1
+  event_content: MyText
+  event_day: 2019-08-28 18:30:58

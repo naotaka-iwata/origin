@@ -1,0 +1,27 @@
+<div class="body-table">
+
+  <%= link_to "イベント一覧へ",events_path,class: "btn-push" %>
+  <div class="events-container">
+   <h3><%= @event.event_day.strftime("%Y年%-m月%-d日 ") %></h3>
+
+
+    <div class="card-body">
+      　 <p class="card-title">イベント内容</p>
+         <p class="card-text">  <%= @event.event_content %></p>
+     </div>
+
+  <br>
+
+  <% if club_signed_in? %>
+  <% if @event.club_id == current_club.id %>
+
+  <%= link_to "削除する", event_path(@event.id),method: :delete ,class: "btn-push"%>
+
+  <% end %>
+  <% end %>
+
+  <%= link_to "サークル詳細へ", club_path(@event.club_id) ,class: "btn-push "%>
+</div>
+
+
+</div>

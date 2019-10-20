@@ -1,0 +1,18 @@
+<h1>投稿一覧</h1>
+<%= link_to "新規投稿へ", new_post_path %>
+<%= link_to 'ログアウト', destroy_club_session_path, method: :delete %>
+<%= link_to "サークル一覧へ", clubs_path %>
+<div class="posts-container">
+  <% @posts.each do |t| %>
+    <div class="post">
+      <%= t.body %>
+      <br>
+      <%= t.created_at %>
+      <br>
+
+      <%= link_to "詳細へ",post_path(t.id) %>
+      <%= link_to "編集する",edit_post_path(t.id) %>
+      <%= link_to "削除する",post_path(t.id),method: :delete %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,36 @@
+
+<header>
+
+<div class="header-wrap row">
+
+
+<div class="header-title col">
+
+  <h2> <a  href="/" >生田のサークル紹介</a> </h2> 
+</div>
+
+<div class="header-right col">
+
+   <div class="header-right-content">
+
+
+    <% if club_signed_in? %>
+      <%= link_to 'ログアウト', destroy_club_session_path, method: :delete ,class: "header-btn-push"%>
+
+    <% else %>
+    <a class="header-btn-push" href="/clubs/sign_up">団体アカウント作成</a>
+     <a class="header-btn-push" href="/clubs/sign_in">ログイン</a>
+    <% end %>
+   </div>
+</div>
+</div>
+
+</header>
+
+<nav>
+<ul class=”current”>
+<li ><a href="/">TOP</a></li>
+<li ><a href="/clubs">サークル一覧</a></li>
+<li ><a href="/events">イベント一覧</a></li>
+</ul>
+</nav>

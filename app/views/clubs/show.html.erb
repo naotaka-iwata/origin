@@ -1,0 +1,201 @@
+<div class="body-table">
+
+<% if club_signed_in? %>
+<% if current_club.id == @club.id %>
+<%= link_to "イベント投稿",new_event_path ,class: "btn-push"%>
+<% end %>
+
+<%= link_to "サークル一覧に戻る",clubs_path ,class: "btn-push" %>
+
+<% if current_club.id == @club.id %>
+  <%= link_to "編集する",edit_club_path(@club.id) ,class: "btn-push"%>
+
+  <%= link_to "削除する",club_path(@club.id),method: :delete ,class: "btn-push"%>
+<% else %>
+<% end %>
+<% end %>
+
+<div class="club-detail">
+  <h3><%= @club.club_name %></h3>
+  <div class="club-detail-content row">
+
+    <div class="image-area col-5 align-items-start">
+
+    <% if @club.img? %>
+        <%= image_tag @club.img.url %>
+    <% end %>
+
+    <div class="club-annual-plans">
+
+
+    <h2>年間スケジュール</h2>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>４月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.april_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>５月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.may_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>６月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.june_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>７月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.july_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>８月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.august_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>９月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.september_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>１０月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.october_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>１１月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.november_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>１２月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.december_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>１月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.january_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>２月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.february_plans)  %>
+    </div>
+    </div>
+
+    <div class="club-annual-plans-content row">
+    <div class="col-5">
+     <h4>３月</h4>
+    </div>
+    <div class="col-7">
+    　　<%= simple_format(@club.march_plans)  %>
+    </div>
+    </div>
+
+  </div>
+　　
+  </div>
+
+  <div class="detail-content col-7 align-items-start">
+
+    <% @club.tag_list.each do |tag| %>
+       <%= link_to tag,  clubs_path(tag_name: tag) ,class:"btn-square-pop"%>
+    <% end %>
+   <div class="club-overview">
+
+   <h2>サークル・団体概要</h2>
+
+   　　<%=  simple_format(@club.club_description) %>
+
+   </div>
+
+  <table>
+  <tr>
+  <th>参加大学</th>
+  <td><%= @club.club_college %></td>
+  </tr>
+
+  <tr>
+  <th>人数</th>
+  <td><%= @club.club_number %></td>
+  </tr>
+
+  <tr>
+  <th>活動場所</th>
+  <td><%= @club.club_place %></td>
+  </tr>
+
+  <tr>
+  <th>活動頻度</th>
+  <td><%= @club.club_frequency %></td>
+  </tr>
+
+  <tr>
+  <th>Twitterアカウント</th>
+  <td><%= @club.club_twitter %></td>
+  </tr>
+
+  <tr>
+  <th>Instagramアカウント</th>
+  <td><%= @club.club_instagram %></td>
+  </tr>
+
+  <tr>
+  <th>新歓・活動スケジュール</th>
+  <td><%= simple_format(@club.active_plans) %></td>
+  </tr>
+
+  </table>
+  </div>
+  </div>
+
+
+
+</div>
+</div>

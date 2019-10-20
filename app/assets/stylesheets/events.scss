@@ -1,0 +1,35 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.event-all{
+  border:solid rgba(109, 70, 167,1);
+  border-radius: 10px
+}
+
+.card-title{
+  border-bottom:solid rgba(109, 70, 167,1);
+}
+
+.events-container{
+  border: solid rgba(109, 70, 167,1);
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  max-width: 940px;
+  margin: 10px 10px 0 10px;
+}
+
+.events-container h3{
+  background-color: rgba(109, 70, 167,1);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.enents h1{
+  color: #364e96;/*文字色*/
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px #364e96;/*上線*/
+  border-bottom: solid 3px #364e96;/*下線*/
+}
