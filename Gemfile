@@ -65,7 +65,7 @@ gem 'bootstrap', '>= 4.1.3'
 
 gem 'jquery-rails'
 
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 1.3'
 
 gem 'acts-as-taggable-on', '~> 6.0' #追加
 
